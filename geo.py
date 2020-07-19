@@ -28,7 +28,7 @@ def main():
         st.write("**Número de endereços:** " +str(df.shape[0]))
         st.markdown('**Visualizando o dataframe**')
         number = st.slider(
-            'Escolha o numero de linhas que deseja ver', min_value=1, max_value=20)
+            'Escolha o numero de linhas que deseja ver', min_value=1, max_value=df.shape[0])
         st.table(df.head(number))
         botao = st.button('Executar')
         if botao:
@@ -42,7 +42,7 @@ def georeferenciamento(df):
     nom = Nominatim(user_agent="test", timeout=3)
 
     df["endereco"] = df["Rua"]+", " + \
-        df["Bairro"]+", "+df["cidade"]+" "+"CE"
+        df["bairro"]+", "+df["cidade"]+" "+df["estado"]
 
     df["Coodernadas"] = df["endereco"].apply(nom.geocode)
 
