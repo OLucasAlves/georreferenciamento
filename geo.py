@@ -25,10 +25,7 @@ def main():
     if file is not None:
         st.subheader('Analisando os dados')
         df = pd.read_csv(file)
-        st.markdown('**Número de linhas:**')
-        st.markdown(df.shape[0])
-        st.markdown('**Número de colunas:**')
-        st.markdown(df.shape[1])
+        st.write("**Número de endereços:** " +str(df.shape[0]))
         st.markdown('**Visualizando o dataframe**')
         number = st.slider(
             'Escolha o numero de linhas que deseja ver', min_value=1, max_value=20)
@@ -73,6 +70,7 @@ def georeferenciamento(df):
     df['lon'] = df['lon'].apply(str)
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
 
-
+    st.markdown("**Desenvolvido por:**")
+    st.write("Lucas Ribeiro")
 if __name__ == '__main__':
     main()
