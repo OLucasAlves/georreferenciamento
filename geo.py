@@ -15,7 +15,7 @@ def get_table_download_link(df):
     b64 = base64.b64encode(csv.encode()).decode()
     href = f'<a href="data:file/csv;base64,{b64}" download="dados.csv">Download csv file</a>'
     return href
-
+ 
 
 def main():
     st.title('Georreferenciamento')
@@ -33,6 +33,7 @@ def main():
         botao = st.button('Executar')
         if botao:
             georeferenciamento(df)
+        
 
 
 def georeferenciamento(df):
@@ -72,5 +73,9 @@ def georeferenciamento(df):
 
     st.markdown("**Desenvolvido por:**")
     st.write("Lucas Ribeiro")
+
+
 if __name__ == '__main__':
+    hide_streamlit_style = "<style> #MainMenu {visibility: hidden;}footer {visibility: hidden;}</style>"
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
     main()
