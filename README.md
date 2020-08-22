@@ -18,8 +18,6 @@ Aplicação que lê uma base csv com dados de estado,cidade,bairro e rua e gera 
 
 ## :rocket: Technologies
 
-This project was developed at the **Next Level Week #1** by [Rockseat](https://rocketseat.com.br/) using the following technologies:
-
 -  [Python 3.7](https://www.python.org/)
 -  [Streamlit 0.61.0](https://www.streamlit.io/)
 -  [pandas 1.0.1](https://pandas.pydata.org/)
