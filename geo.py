@@ -25,6 +25,7 @@ def main():
     if file is not None:
         st.subheader('Analisando os dados')
         df = pd.read_csv(file)
+        df.columns = df.columns.str.upper()
         st.write("**Número de endereços:** " +str(df.shape[0]))
         st.markdown('**Visualizando o dataframe**')
         number = st.slider(
@@ -41,15 +42,16 @@ def georeferenciamento(df):
 
     from geopy.geocoders import Nominatim
     nom = Nominatim(user_agent="test", timeout=3)
+    
 
-    df["endereco"] = df["Rua"]+", " + \
-        df["bairro"]+", "+df["cidade"]+" "+df["estado"]
+    df["ENDERECO"] = df["RUA"]+", " + \
+        df["BAIRRO"]+", "+df["CIDADE"]+" "+df["ESTADO"]
 
-    df["Coodernadas"] = df["endereco"].apply(nom.geocode)
+    df["COORDERNADAS"] = df["ENDERECO"].apply(nom.geocode)
 
-    df["lat"] = df["Coodernadas"].apply(
+    df["lat"] = df["COORDERNADAS"].apply(
         lambda x: x.latitude if x != None else None)
-    df["lon"] = df["Coodernadas"].apply(
+    df["lon"] = df["COORDERNADAS"].apply(
         lambda x: x.longitude if x != None else None)
 
     dados = df.copy()
