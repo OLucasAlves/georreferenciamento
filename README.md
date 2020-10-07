@@ -7,6 +7,10 @@
 
 <p>
 Aplicação que lê uma base csv com dados de estado,cidade,bairro e rua e gera a latitude e longitude, plota os pontos no mapa e permite o download dos dados.
+
+[Demo](https://georreferenciamento.herokuapp.com) da aplicação.
+
+[Base](https://lnkd.in/diEwYzf) de teste
 </p>
 
 
@@ -17,8 +21,6 @@ Aplicação que lê uma base csv com dados de estado,cidade,bairro e rua e gera 
 
 
 ## :rocket: Technologies
-
-This project was developed at the **Next Level Week #1** by [Rockseat](https://rocketseat.com.br/) using the following technologies:
 
 -  [Python 3.7](https://www.python.org/)
 -  [Streamlit 0.61.0](https://www.streamlit.io/)
